@@ -10,13 +10,19 @@ import StackUI
 
 class VScrollStackViewController: UIViewController {
 
+    @Live var descHidden = false
+    weak var btn: Button!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
         edgesForExtendedLayout = .init(rawValue: 0)
         title = "VScrollStack"
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.descHidden = true
+        }
+
         var users = [UserModel]()
         for index in 0...25 {
             let model = UserModel(avatar: "avatar", name: "用户\(index)", desc: "用户描述\(index)")
@@ -30,12 +36,21 @@ class VScrollStackViewController: UIViewController {
                         Spacer(spacing: 12)
                         ImageView().image(UIImage(named: model.avatar)).size(width: 40, height: 40)
                         VStack {
-                            Label(model.name).font(.systemFont(ofSize: 18, weight: .medium))
-                            Label().text(model.desc).font(.systemFont(ofSize: 12)).textColor(.gray)
+                            Label(model.name).font(.systemFont(ofSize: 18, weight: .medium)).backgroundColor(.red)
+                            Label().text(model.desc).font(.systemFont(ofSize: 12)).textColor(.gray).apply { label in
+                                label.text = "ahh"
+                            }
+                            Button().title("关注", for: .normal).backgroundColor(.blue)
+                                    .titleColor(.black, for: .normal)
+                                    .addAction(for: .touchUpInside) {
+                                        print("点击了按钮")
+                                    }.assign(to: &btn)
                         }
                     }
                     Divider()
-                }.size(height: 80)
+                }.size(height: 190).onTapGesture{ [weak self] in
+                    print(model)
+                }
             }
         }
         view.addSubview(stack)

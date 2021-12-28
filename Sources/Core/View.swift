@@ -39,8 +39,19 @@ public protocol StackUIView: StackUILayer {
     func overrideUserInterfaceStyle(_ overrideUserInterfaceStyle: UIUserInterfaceStyle) -> Self
     func contentHuggingPriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) -> Self
     func contentCompressionResistancePriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) -> Self
+    func assign<T>(to variable: inout T) -> Self
 }
 public extension StackUIView {
+    func assign<T>(to variable: inout T) -> Self {
+        if let casted = self as? T {
+            variable = casted
+        } else {
+            preconditionFailure("Can't cast \(Self.self) to \(T.self)")
+        }
+
+        return self
+    }
+
     func size(width: CGFloat? = nil, height: CGFloat? = nil) -> Self {
         translatesAutoresizingMaskIntoConstraints = false
         if let width = width {

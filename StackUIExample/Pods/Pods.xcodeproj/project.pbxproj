@@ -192,6 +192,9 @@
 		95888DBD9B15251CDA1F2057C2186C56 /* Deferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E8E0A220121093B5579B8F3C65BE8 /* Deferred.swift */; };
 		95F4CD3227C59F97363076FE96C9DBCF /* ControlProperty+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8D9FEBEB85C36E476569ED118035E /* ControlProperty+Driver.swift */; };
 		95FEC2A31BFA2578F94FE95DA3EF5A6D /* Zip+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5840A71D5B5A0F5EF2CC93E34DDD3FE2 /* Zip+Collection.swift */; };
+		960D412F277B7FB80039718D /* UIControl+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D412C277B7FB80039718D /* UIControl+Event.swift */; };
+		960D4130277B7FB80039718D /* ClosureAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D412D277B7FB80039718D /* ClosureAction.swift */; };
+		960D4131277B7FB80039718D /* UIView+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D412E277B7FB80039718D /* UIView+Gesture.swift */; };
 		96BD86979DF622E7C2566DF99795D015 /* Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A306785BF023ED6186744002104429 /* Rx.swift */; };
 		9796CEB33E3687A36DD225BCC7FADB2B /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5FEECC614FB6708CB0F456598C3E1 /* Optional.swift */; };
 		9809EE23B5668CE268C6A2EEFB570948 /* ControlEvent+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCD7D658EB3297F5BB3026ED26EF5B7 /* ControlEvent+Driver.swift */; };
@@ -562,6 +565,9 @@
 		94BCAB43F73D8738DF3DB6ED92592DA2 /* Materialize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Materialize.swift; path = RxSwift/Observables/Materialize.swift; sourceTree = "<group>"; };
 		94F9A3FA6BF66830CF9F08AD0C0FE96E /* AsyncLock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncLock.swift; path = RxSwift/Concurrency/AsyncLock.swift; sourceTree = "<group>"; };
 		95673903F5D4E641A8AB971401FF9447 /* RxCollectionViewReactiveArrayDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxCollectionViewReactiveArrayDataSource.swift; path = RxCocoa/iOS/DataSources/RxCollectionViewReactiveArrayDataSource.swift; sourceTree = "<group>"; };
+		960D412C277B7FB80039718D /* UIControl+Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Event.swift"; sourceTree = "<group>"; };
+		960D412D277B7FB80039718D /* ClosureAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureAction.swift; sourceTree = "<group>"; };
+		960D412E277B7FB80039718D /* UIView+Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Gesture.swift"; sourceTree = "<group>"; };
 		96DC43C9D45B8225C51DC6C5CF0A9D99 /* Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Range.swift; path = RxSwift/Observables/Range.swift; sourceTree = "<group>"; };
 		98A242389079D9938EB9EB5AE3673625 /* Generate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Generate.swift; path = RxSwift/Observables/Generate.swift; sourceTree = "<group>"; };
 		98B8C6B5AEE47E750B4FB709DE8044E7 /* RxCocoa-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxCocoa-prefix.pch"; sourceTree = "<group>"; };
@@ -941,6 +947,9 @@
 				7E3A2E11049D2D3FB73D735363A9521B /* TextView.swift */,
 				4A583841881EC816332407EB06EDD194 /* View.swift */,
 				EAF8D599274E400300AE1569 /* ViewBox.swift */,
+				960D412D277B7FB80039718D /* ClosureAction.swift */,
+				960D412C277B7FB80039718D /* UIControl+Event.swift */,
+				960D412E277B7FB80039718D /* UIView+Gesture.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -1531,6 +1540,7 @@
 				E4D5CD47B5493FB436BCAF6432354B1A /* Button.swift in Sources */,
 				A01D032F62FCDF09C09BDC47FC5B9D98 /* CollectionView.swift in Sources */,
 				1EDB6A596FD28496A40B5D0C8D968576 /* Control.swift in Sources */,
+				960D412F277B7FB80039718D /* UIControl+Event.swift in Sources */,
 				BB280FE96A0FEFEBA1BE70761260C46D /* Divider.swift in Sources */,
 				7A187DAA4CA30B939AAFFE98D5ECE22B /* ImageView.swift in Sources */,
 				02DD918F8A9E91E2D6D4A9DED8ABF865 /* Label.swift in Sources */,
@@ -1542,11 +1552,13 @@
 				4DE9A180765A4BBB5195ECB0CE85380A /* Spacer.swift in Sources */,
 				EAF8D59A274E400300AE1569 /* ViewBox.swift in Sources */,
 				61331F9B1B3529AF005EBD7BFC7ED73B /* StackUI+RxSwift.swift in Sources */,
+				960D4130277B7FB80039718D /* ClosureAction.swift in Sources */,
 				6E43F949206DC277D53A425EBF227E86 /* StackUI-dummy.m in Sources */,
 				1FF9D2F1CC4DF6F14F6D75F5B7367206 /* StackView.swift in Sources */,
 				D38F20CA9916B418098C4EBC2727A9D0 /* Stepper.swift in Sources */,
 				64966597AFEFC1ADEDC9361EE6E0DB4A /* Switch.swift in Sources */,
 				CA2D39C9DDFD829E411442C2F6AB4824 /* TableView.swift in Sources */,
+				960D4131277B7FB80039718D /* UIView+Gesture.swift in Sources */,
 				3D7B5063F8E1B7FCD7D5AB31650883A9 /* TextField.swift in Sources */,
 				7679298F8663BA85BA580AA49F6B3793 /* TextView.swift in Sources */,
 				676CF8A3F5CE09192E9907B6A4A73AF4 /* View.swift in Sources */,
